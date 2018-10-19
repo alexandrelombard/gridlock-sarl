@@ -11,14 +11,14 @@ import fr.utbm.gridlock.utils.Vector3
  * 
  */
 class RoadSegment extends Object {
-	
-	val beginPoint: Vector3
-	val endPoint: Vector3
+
+	public val beginPoint : Vector3
+	public val endPoint : Vector3
 	
 	/** The vehicles present on this road segment */
-	val vehicles = <Vehicle>newArrayList
+	public val vehicles = <Vehicle>newArrayList
 	
-	var name: String = ""
+	public var name: String = ""
 
 	new (beginPoint : Vector3, endPoint : Vector3) {
 		this.beginPoint = beginPoint

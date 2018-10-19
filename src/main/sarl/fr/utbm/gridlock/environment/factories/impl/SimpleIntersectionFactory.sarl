@@ -7,6 +7,8 @@ import fr.utbm.gridlock.environment.RoadNetwork
 import fr.utbm.gridlock.environment.factories.RoadNetworkFactory
 import fr.utbm.gridlock.utils.Vector3
 import fr.utbm.gridlock.environment.RoadSegment
+import fr.utbm.gridlock.environment.IntersectionMovement
+import fr.utbm.gridlock.environment.Intersection
 
 /** 
  * Generate a road network representing a simple T-intersection, like the following one:<br/>
@@ -34,8 +36,19 @@ class SimpleIntersectionFactory extends Object implements RoadNetworkFactory {
 		val vRight = new RoadSegment(new Vector3(120.0, 10.0, 0.0), new Vector3(120.0, 110.0, 0.0))
 		
 		// Create movements
+		val mvt00 = new IntersectionMovement(hBottomLeft, vRight, null)
+		val mvt01 = new IntersectionMovement(hBottomLeft, hBottomRight, null)
+		
+		val mvt10 = new IntersectionMovement(hTopRight, vRight, null)
+		val mvt11 = new IntersectionMovement(hTopRight, hTopLeft, null)
+		
+		val mvt20 = new IntersectionMovement(vLeft, hTopLeft, null)
+		val mvt21 = new IntersectionMovement(vLeft, hBottomRight, null)
 		
 		// Create the intersection
+		val intersection = new Intersection()
+		intersection.movements.addAll(newArrayList(mvt00, mvt01, mvt10, mvt11, mvt20, mvt21))
+		
 	}
 	
 }

@@ -10,6 +10,6 @@ package fr.utbm.gridlock.environment
  */
 class Intersection extends Object {
 	
-	val movements = <IntersectionMovement>newArrayList
+	public val movements = <IntersectionMovement>newArrayList
 	
 }

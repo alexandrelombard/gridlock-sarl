@@ -5,6 +5,9 @@ package fr.utbm.gridlock.management
 
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
+import fr.utbm.gridlock.management.events.IntersectionUpdateRequest
+import fr.utbm.gridlock.management.events.IntersectionEntranceRequest
+import fr.utbm.gridlock.management.events.IntersectionExitRequest
 
 /** 
  * Manages the right of way at intersections
@@ -16,6 +19,18 @@ agent IntersectionManagerAgent {
 
 	on Initialize {
 		//
+	}
+	
+	on IntersectionEntranceRequest {
+		
+	}
+	
+	on IntersectionUpdateRequest {
+		
+	}
+	
+	on IntersectionExitRequest {
+		
 	}
 
 }

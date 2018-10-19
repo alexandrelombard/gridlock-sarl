@@ -7,6 +7,7 @@ import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Schedules
 import fr.utbm.gridlock.environment.factories.impl.SimpleIntersectionFactory
+import java.util.UUID
 
 /** 
  * The environment agent, in charge of initializing the road network, then updating the positions of the vehicles on the road network
@@ -18,6 +19,9 @@ agent EnvironmentAgent {
 	
 	/** The road network of the environment */
 	val roadNetwork = new RoadNetwork()
+	
+	/** The vehicles currently in the environment */
+	val vehicles = <UUID, Vehicle>newHashMap
 	
 	def buildRoadNetwork() {
 		// Note: change the implementation of the factory to generate another road network
@@ -33,5 +37,9 @@ agent EnvironmentAgent {
 		buildRoadNetwork()
 		
 		info("Scheduling vehicle spawn...")
+		
+		every(1000.milliseconds)[
+			
+		]
 	}
 }

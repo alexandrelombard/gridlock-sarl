@@ -1,0 +1,10 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.management.events
+
+/** 
+ * @author Alexandre Lombard
+ * 
+ */
+event IntersectionEntranceRequest

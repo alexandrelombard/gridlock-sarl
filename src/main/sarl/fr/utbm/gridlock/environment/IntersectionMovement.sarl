@@ -9,18 +9,18 @@ package fr.utbm.gridlock.environment
  * 
  */
 class IntersectionMovement extends Object {
+
+	public val from : RoadSegment
+	public val to : RoadSegment
 	
-	val from: RoadSegment
-	val to: RoadSegment
-	
-	val segment: RoadSegment
+	public val segment: RoadSegment
 	
 	/**
 	 * @param from the source segment
 	 * @param to the destination segment
 	 * @param segment the segment which is modeling the connection from "from" to "to" 
 	 */
-	new (from: RoadSegment, to: RoadSegment, segment: RoadSegment) {
+	new (from: RoadSegment, to: RoadSegment, segment: RoadSegment = null) {
 		this.from = from
 		this.to = to
 		this.segment = segment
