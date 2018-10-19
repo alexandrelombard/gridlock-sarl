@@ -8,6 +8,11 @@ import io.sarl.core.Logging
 import io.sarl.core.Schedules
 import fr.utbm.gridlock.environment.factories.impl.SimpleIntersectionFactory
 import java.util.UUID
+import fr.utbm.gridlock.driver.DriverAgent
+import io.sarl.core.Lifecycle
+import io.sarl.core.AgentKilled
+import fr.utbm.gridlock.environment.network.RoadNetwork
+import fr.utbm.gridlock.SimulationStep
 
 /** 
  * The environment agent, in charge of initializing the road network, then updating the positions of the vehicles on the road network
@@ -15,7 +20,8 @@ import java.util.UUID
  * 
  */
 agent EnvironmentAgent {
-	uses Logging, Schedules
+	
+	uses Logging, Schedules, Lifecycle
 	
 	/** The road network of the environment */
 	val roadNetwork = new RoadNetwork()
@@ -23,7 +29,7 @@ agent EnvironmentAgent {
 	/** The vehicles currently in the environment */
 	val vehicles = <UUID, Vehicle>newHashMap
 	
-	def buildRoadNetwork() {
+	private def buildRoadNetwork() {
 		// Note: change the implementation of the factory to generate another road network
 		val roadNetworkFactory = new SimpleIntersectionFactory()
 		
@@ -39,7 +45,34 @@ agent EnvironmentAgent {
 		info("Scheduling vehicle spawn...")
 		
 		every(1000.milliseconds)[
+			info("Spawning a new vehicle...")
 			
+			// Spawn a vehicle
+			val vehicle = new Vehicle()
+			val driverId = typeof(DriverAgent).spawn
+			
+			vehicles.put(driverId, vehicle)
 		]
+	}
+	
+	on AgentKilled {
+		synchronized (this.vehicles) {
+			// Delete the vehicle of the agent who died
+			val vehicle = this.vehicles.get(occurrence.source.UUID)
+
+			if (vehicle !== null) {
+				if (vehicle.segment !== null) {
+					vehicle.segment.vehicles.remove(vehicle)
+				}
+
+				this.vehicles.remove(vehicle)
+			}			
+		}
+	}
+	
+	on SimulationStep {
+		// Apply pending vehicles actions
+		
+		// Compute vehicles perceptions
 	}
 }

@@ -3,12 +3,12 @@
  */
 package fr.utbm.gridlock.environment.factories.impl
 
-import fr.utbm.gridlock.environment.RoadNetwork
 import fr.utbm.gridlock.environment.factories.RoadNetworkFactory
+import fr.utbm.gridlock.environment.network.RoadNetwork
+import fr.utbm.gridlock.environment.network.RoadSegment
+import fr.utbm.gridlock.environment.network.IntersectionMovement
+import fr.utbm.gridlock.environment.network.Intersection
 import fr.utbm.gridlock.utils.Vector3
-import fr.utbm.gridlock.environment.RoadSegment
-import fr.utbm.gridlock.environment.IntersectionMovement
-import fr.utbm.gridlock.environment.Intersection
 
 /** 
  * Generate a road network representing a simple T-intersection, like the following one:<br/>

@@ -1,0 +1,11 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock
+
+/** 
+ * Simulation step event
+ * @author Alexandre Lombard
+ * 
+ */
+event SimulationStep

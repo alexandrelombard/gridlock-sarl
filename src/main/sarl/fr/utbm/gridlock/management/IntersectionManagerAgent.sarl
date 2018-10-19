@@ -22,14 +22,16 @@ agent IntersectionManagerAgent {
 	}
 	
 	on IntersectionEntranceRequest {
-		
+		info("Intersection " + this.ID + " received entrance request from: " + occurrence.source.UUID)
 	}
 	
 	on IntersectionUpdateRequest {
+		info("Intersection " + this.ID + " received update request from: " + occurrence.source.UUID)
 		
 	}
 	
 	on IntersectionExitRequest {
+		info("Intersection " + this.ID + " received exit request from: " + occurrence.source.UUID)
 		
 	}
 

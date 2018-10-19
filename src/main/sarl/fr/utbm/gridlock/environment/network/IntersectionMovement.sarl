@@ -1,7 +1,7 @@
 /** 
  * 
  */
-package fr.utbm.gridlock.environment
+package fr.utbm.gridlock.environment.network
 
 /** 
  * Model of an intersection movement, making the link between two road segments.

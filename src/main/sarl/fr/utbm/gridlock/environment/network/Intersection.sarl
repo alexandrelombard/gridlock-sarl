@@ -1,7 +1,7 @@
 /** 
  * 
  */
-package fr.utbm.gridlock.environment
+package fr.utbm.gridlock.environment.network
 
 /** 
  * Represents an intersection, connects several road segments with a collection of movements.

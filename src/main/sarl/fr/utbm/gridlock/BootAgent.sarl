@@ -7,6 +7,8 @@ import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
 import fr.utbm.gridlock.environment.EnvironmentAgent
+import io.sarl.core.Schedules
+import io.sarl.core.DefaultContextInteractions
 
 /** 
  * Initialize the simulation
@@ -15,11 +17,14 @@ import fr.utbm.gridlock.environment.EnvironmentAgent
  * 
  */
 agent BootAgent {
-	uses Logging, Lifecycle
+	uses DefaultContextInteractions, Logging, Lifecycle, Schedules
 
 	on Initialize {
 		info("Initializing simulation...")
 		
-		typeof(EnvironmentAgent).spawn
+		val environmentId = typeof(EnvironmentAgent).spawn
+		
+		// Regularly the simulation step event will be sent to the environment agent
+		every(1000)[new SimulationStep().emit [it == environmentId]]
 	}
 }

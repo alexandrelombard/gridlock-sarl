@@ -3,7 +3,7 @@
  */
 package fr.utbm.gridlock.environment.factories
 
-import fr.utbm.gridlock.environment.RoadNetwork
+import fr.utbm.gridlock.environment.network.RoadNetwork
 
 /** 
  * @author alexa

@@ -4,7 +4,6 @@
 package fr.utbm.gridlock.driver
 
 import io.sarl.core.Initialize
-import io.sarl.core.Logging
 
 /** 
  * Agent which drives a vehicle
@@ -12,8 +11,6 @@ import io.sarl.core.Logging
  * 
  */
 agent DriverAgent {
-	uses Logging
-
 	on Initialize {
 		//
 	}

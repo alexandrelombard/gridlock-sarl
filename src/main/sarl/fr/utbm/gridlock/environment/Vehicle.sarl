@@ -3,6 +3,8 @@
  */
 package fr.utbm.gridlock.environment
 
+import fr.utbm.gridlock.environment.network.RoadSegment
+
 /** 
  * The body of a vehicle
  * @author Alexandre Lombard
@@ -11,6 +13,6 @@ package fr.utbm.gridlock.environment
 class Vehicle extends Object {
 	
 	/** The current road segment of the vehicle */
-	var segment: RoadSegment
+	public var segment: RoadSegment
 	
 }
