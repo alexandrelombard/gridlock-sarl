@@ -37,8 +37,15 @@ class Vehicle extends Object {
 	 * @param acceleration the acceleration to apply in m.s^-2
 	 * @param deltaTime the duration of the application of this acceleration
 	 */
-	def move(acceleration: Double, deltaTime: Double) {
-		// We update the position
+	def move(acceleration: Double, steeringWheelAngle: Double, deltaTime: Double) {
+		// We compute the traveled distance for the given deltaTime
+		val traveledDistance = this.velocity * deltaTime + 0.5 * acceleration * Math.pow(deltaTime, 2) 
+		
+		// We update the position and angle (direction) assuming that the steering wheel angle
+		// is applied instantaneously
+		// TODO
+		this.position = new Vector3()
+		
 		// We update the velocity
 		this.velocity += acceleration * deltaTime 
 	}
