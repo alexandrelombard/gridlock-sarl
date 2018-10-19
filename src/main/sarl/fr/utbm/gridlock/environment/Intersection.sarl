@@ -4,9 +4,12 @@
 package fr.utbm.gridlock.environment
 
 /** 
- * Represents an intersection, connects several road segments
+ * Represents an intersection, connects several road segments with a collection of movements.
  * @author Alexandre Lombard
  * 
  */
 class Intersection extends Object {
+	
+	val movements = <IntersectionMovement>newArrayList
+	
 }

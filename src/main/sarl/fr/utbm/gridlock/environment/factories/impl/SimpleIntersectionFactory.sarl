@@ -1,0 +1,41 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.environment.factories.impl
+
+import fr.utbm.gridlock.environment.RoadNetwork
+import fr.utbm.gridlock.environment.factories.RoadNetworkFactory
+import fr.utbm.gridlock.utils.Vector3
+import fr.utbm.gridlock.environment.RoadSegment
+
+/** 
+ * Generate a road network representing a simple T-intersection, like the following one:<br/>
+ * 
+ *                  |      |
+ *                  |      |
+ * o-----------------      ------------------o
+ * 
+ * o-----------------------------------------o
+ *                  
+ * The lanes are two-way and all possible movements are included (except U-turns).
+ * 
+ * @author Alexandre Lombard
+ * 
+ */
+class SimpleIntersectionFactory extends Object implements RoadNetworkFactory {
+	
+	override generateRoadNetwork(roadNetwork : RoadNetwork) {
+		// Create road segments
+		val hTopLeft = new RoadSegment(new Vector3(100.0, 10.0, 0.0), new Vector3(0.0, 10.0, 0.0))
+		val hBottomLeft = new RoadSegment(new Vector3(0.0, 0.0, 0.0), new Vector3(100.0, 0.0, 0.0))
+		val hTopRight = new RoadSegment(new Vector3(220.0, 10.0, 0.0), new Vector3(120.0, 10.0, 0.0))
+		val hBottomRight = new RoadSegment(new Vector3(120.0, 0.0, 0.0), new Vector3(220.0, 0.0, 0.0))
+		val vLeft = new RoadSegment(new Vector3(100.0, 110.0, 0.0), new Vector3(100.0, 10.0, 0.0))
+		val vRight = new RoadSegment(new Vector3(120.0, 10.0, 0.0), new Vector3(120.0, 110.0, 0.0))
+		
+		// Create movements
+		
+		// Create the intersection
+	}
+	
+}

@@ -4,9 +4,13 @@
 package fr.utbm.gridlock.environment
 
 /** 
- * Represents a set of connected road segments and intersections
+ * Represents a set of connected road segments and intersections. In this model, it's the environment.
  * @author Alexandre Lombard
  * 
  */
 class RoadNetwork extends Object {
+	
+	val segments = <RoadSegment>newArrayList
+	val intersections = <Intersection>newArrayList
+	
 }

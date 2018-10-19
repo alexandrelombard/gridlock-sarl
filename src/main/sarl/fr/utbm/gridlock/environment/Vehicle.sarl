@@ -9,4 +9,8 @@ package fr.utbm.gridlock.environment
  * 
  */
 class Vehicle extends Object {
+	
+	/** The current road segment of the vehicle */
+	var segment: RoadSegment
+	
 }

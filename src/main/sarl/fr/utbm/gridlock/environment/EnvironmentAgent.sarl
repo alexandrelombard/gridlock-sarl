@@ -5,16 +5,33 @@ package fr.utbm.gridlock.environment
 
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
+import io.sarl.core.Schedules
+import fr.utbm.gridlock.environment.factories.impl.SimpleIntersectionFactory
 
 /** 
- * The environment agent, in charge of updating the positions of the vehicles on the road network
+ * The environment agent, in charge of initializing the road network, then updating the positions of the vehicles on the road network
  * @author Alexandre Lombard
  * 
  */
 agent EnvironmentAgent {
-	uses Logging
+	uses Logging, Schedules
+	
+	/** The road network of the environment */
+	val roadNetwork = new RoadNetwork()
+	
+	def buildRoadNetwork() {
+		// Note: change the implementation of the factory to generate another road network
+		val roadNetworkFactory = new SimpleIntersectionFactory()
+		
+		// Generate the road network
+		roadNetworkFactory.generateRoadNetwork(this.roadNetwork)
+	}
 
 	on Initialize {
+		info("Building road network...")
 		
+		buildRoadNetwork()
+		
+		info("Scheduling vehicle spawn...")
 	}
 }

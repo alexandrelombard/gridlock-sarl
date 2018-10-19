@@ -1,0 +1,14 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.environment.factories
+
+import fr.utbm.gridlock.environment.RoadNetwork
+
+/** 
+ * @author alexa
+ * 
+ */
+interface RoadNetworkFactory {
+	def generateRoadNetwork(roadNetwork: RoadNetwork)
+}

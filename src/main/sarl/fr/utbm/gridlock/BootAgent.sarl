@@ -5,6 +5,8 @@ package fr.utbm.gridlock
 
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
+import io.sarl.core.Lifecycle
+import fr.utbm.gridlock.environment.EnvironmentAgent
 
 /** 
  * Initialize the simulation
@@ -13,9 +15,11 @@ import io.sarl.core.Logging
  * 
  */
 agent BootAgent {
-	uses Logging
+	uses Logging, Lifecycle
 
 	on Initialize {
-		//
+		info("Initializing simulation...")
+		
+		typeof(EnvironmentAgent).spawn
 	}
 }

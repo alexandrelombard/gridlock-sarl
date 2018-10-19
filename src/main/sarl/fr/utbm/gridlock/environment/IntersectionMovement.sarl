@@ -1,0 +1,29 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.environment
+
+/** 
+ * Model of an intersection movement, making the link between two road segments.
+ * @author Alexandre Lombard
+ * 
+ */
+class IntersectionMovement extends Object {
+	
+	val from: RoadSegment
+	val to: RoadSegment
+	
+	val segment: RoadSegment
+	
+	/**
+	 * @param from the source segment
+	 * @param to the destination segment
+	 * @param segment the segment which is modeling the connection from "from" to "to" 
+	 */
+	new (from: RoadSegment, to: RoadSegment, segment: RoadSegment) {
+		this.from = from
+		this.to = to
+		this.segment = segment
+	}
+	
+}

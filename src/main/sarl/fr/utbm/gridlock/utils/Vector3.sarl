@@ -1,0 +1,38 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.utils
+
+/** 
+ * @author alexa
+ * 
+ */
+class Vector3 extends Object {
+	
+	var x = 0.0
+	var y = 0.0
+	var z = 0.0
+	
+	new() {}
+	
+	new (x: Integer, y: Integer, z: Integer) {
+		this.x = x
+		this.y = y
+		this.z = z
+	}
+	
+	new (x: Double, y: Double, z: Double) {
+		this.x = x
+		this.y = y
+		this.z = z
+	}
+	
+	def operator_plus(a: Vector3, b: Vector3) {
+		return new Vector3(a.x + b.x, a.y + b.y, a.z + b.z)
+	}
+	
+	def operator_minus(a: Vector3, b: Vector3) {
+		return new Vector3(a.x - b.x, a.y - b.y, a.z - b.z)
+	}
+	
+}

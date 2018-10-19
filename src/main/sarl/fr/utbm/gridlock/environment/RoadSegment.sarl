@@ -3,10 +3,25 @@
  */
 package fr.utbm.gridlock.environment
 
+import fr.utbm.gridlock.utils.Vector3
+
 /** 
  * Represents a road segment (a portion of road which main contains several vehicles)
  * @author Alexandre Lombard
  * 
  */
 class RoadSegment extends Object {
+	
+	val beginPoint: Vector3
+	val endPoint: Vector3
+	
+	/** The vehicles present on this road segment */
+	val vehicles = <Vehicle>newArrayList
+	
+	var name: String = ""
+
+	new (beginPoint : Vector3, endPoint : Vector3) {
+		this.beginPoint = beginPoint
+		this.endPoint = endPoint
+	}
 }
