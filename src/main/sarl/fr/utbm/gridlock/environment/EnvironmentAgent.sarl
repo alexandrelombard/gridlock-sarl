@@ -1,0 +1,20 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.environment
+
+import io.sarl.core.Initialize
+import io.sarl.core.Logging
+
+/** 
+ * The environment agent, in charge of updating the positions of the vehicles on the road network
+ * @author Alexandre Lombard
+ * 
+ */
+agent EnvironmentAgent {
+	uses Logging
+
+	on Initialize {
+		
+	}
+}
