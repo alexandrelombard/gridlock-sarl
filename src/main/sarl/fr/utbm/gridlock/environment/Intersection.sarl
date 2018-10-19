@@ -4,7 +4,8 @@
 package fr.utbm.gridlock.environment
 
 /** 
- * @author alexa
+ * Represents an intersection, connects several road segments
+ * @author Alexandre Lombard
  * 
  */
 class Intersection extends Object {

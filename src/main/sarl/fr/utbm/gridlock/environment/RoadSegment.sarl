@@ -4,7 +4,8 @@
 package fr.utbm.gridlock.environment
 
 /** 
- * @author alexa
+ * Represents a road segment (a portion of road which main contains several vehicles)
+ * @author Alexandre Lombard
  * 
  */
 class RoadSegment extends Object {

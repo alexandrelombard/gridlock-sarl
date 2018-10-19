@@ -1,0 +1,12 @@
+/** 
+ * 
+ */
+package fr.utbm.gridlock.environment
+
+/** 
+ * The body of a vehicle
+ * @author Alexandre Lombard
+ * 
+ */
+class Vehicle extends Object {
+}
