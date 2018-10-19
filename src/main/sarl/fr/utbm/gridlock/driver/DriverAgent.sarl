@@ -4,6 +4,7 @@
 package fr.utbm.gridlock.driver
 
 import io.sarl.core.Initialize
+import fr.utbm.gridlock.environment.events.VehiclePositionUpdated
 
 /** 
  * Agent which drives a vehicle
@@ -13,5 +14,9 @@ import io.sarl.core.Initialize
 agent DriverAgent {
 	on Initialize {
 		//
+	}
+	
+	on VehiclePositionUpdated {
+		
 	}
 }

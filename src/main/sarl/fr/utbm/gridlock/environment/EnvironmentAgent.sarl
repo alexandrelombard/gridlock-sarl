@@ -13,6 +13,7 @@ import io.sarl.core.Lifecycle
 import io.sarl.core.AgentKilled
 import fr.utbm.gridlock.environment.network.RoadNetwork
 import fr.utbm.gridlock.SimulationStep
+import fr.utbm.gridlock.utils.Vector3
 
 /** 
  * The environment agent, in charge of initializing the road network, then updating the positions of the vehicles on the road network
@@ -48,7 +49,7 @@ agent EnvironmentAgent {
 			info("Spawning a new vehicle...")
 			
 			// Spawn a vehicle
-			val vehicle = new Vehicle()
+			val vehicle = new Vehicle(new Vector3())
 			val driverId = typeof(DriverAgent).spawn
 			
 			vehicles.put(driverId, vehicle)

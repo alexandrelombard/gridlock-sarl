@@ -4,6 +4,7 @@
 package fr.utbm.gridlock.environment
 
 import fr.utbm.gridlock.environment.network.RoadSegment
+import fr.utbm.gridlock.utils.Vector3
 
 /** 
  * The body of a vehicle
@@ -12,7 +13,34 @@ import fr.utbm.gridlock.environment.network.RoadSegment
  */
 class Vehicle extends Object {
 	
+	public val wheelbase = 4
+	
+	/** The current position of the vehicle */
+	public var position : Vector3
+	/** The current forward velocity of the vehicle */
+	public var velocity = 0.0
+	/** The current angle of the direction of the vehicle (the yaw)*/
+	public var angle = 0.0
+
 	/** The current road segment of the vehicle */
-	public var segment: RoadSegment
+	public var segment : RoadSegment
+	
+	new (position: Vector3, angle: Double = 0.0, velocity: Double = 0.0) {
+		this.position = position
+		this.velocity = velocity
+		this.angle = angle
+	}
+	
+	/**
+	 * Applying the given acceleration and the given steering wheel angle for the given amount of time,
+	 * we compute the new position of the vehicle
+	 * @param acceleration the acceleration to apply in m.s^-2
+	 * @param deltaTime the duration of the application of this acceleration
+	 */
+	def move(acceleration: Double, deltaTime: Double) {
+		// We update the position
+		// We update the velocity
+		this.velocity += acceleration * deltaTime 
+	}
 	
 }
